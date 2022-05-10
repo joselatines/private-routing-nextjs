@@ -21,6 +21,7 @@ export default function Home() {
 					alt='Picture of the author'
 					width={100}
 					height={100}
+					priority
 				/>
 				<Buttons>
 					<Link href='/login'>
