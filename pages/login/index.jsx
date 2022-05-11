@@ -1,8 +1,5 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import { Ball } from '../../components/ball/styles';
-import Button from '../../components/button/styles';
-import { Container, Form, Input, Inputs, Error } from './styles';
 
 export default function Login({ error }) {
 	const [userData, setUserData] = useState({});
@@ -14,30 +11,27 @@ export default function Login({ error }) {
 	};
 
 	return (
-		<Container>
-			<Ball b2={true} style={{ left: 350, bottom: 80 }}></Ball>
-
-			<Ball b3={true} size='8rem' style={{ right: 350, top: 80 }}></Ball>
+		<div className='container'>
 			<div>
-				<Form>
+				<form className='form'>
 					<h1>Login Here</h1>
-					<Inputs>
-						<Input
+					<div className='inputs'>
+						<input
 							onChange={e => handleChange(e)}
 							type='text'
 							name='username'
 							placeholder='Username'
 							required
 						/>
-						<Input
+						<input
 							onChange={e => handleChange(e)}
 							type='text'
 							name='password'
 							placeholder='Password'
 							required
 						/>
-					</Inputs>
-					{error !== '' && <Error>{error}</Error>}
+					</div>
+					{error !== '' && <span className='error'>{error}</span>}
 
 					<Link
 						href={{
@@ -46,16 +40,54 @@ export default function Login({ error }) {
 						}}
 						as='/dashboard'
 					>
-						<Button outline={true} onClick={() => setUserData({})}>
-							Login
-						</Button>
+						<button onClick={() => setUserData({})}>Login</button>
 					</Link>
-				</Form>
+				</form>
 				<Link href='/'>
-					<Button size='.7em'>Go Home</Button>
+					<button size='.7em'>Go Home</button>
 				</Link>
 			</div>
-		</Container>
+
+			<style jsx>{`
+				.container {
+					min-height: 100vh;
+					display: grid;
+					place-items: center;
+				}
+				input {
+					outline: none;
+					min-width: 10rem;
+
+					border-radius: 5px;
+					padding: 1rem;
+					opacity: 0.5;
+				}
+				form {
+					padding: 3rem;
+					max-width: 60vw;
+					min-height: 50vh;
+					margin-bottom: 2rem;
+					background: rgba(46, 45, 54, 0.25);
+					/* 	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+					backdrop-filter: blur(8.5px);
+					-webkit-backdrop-filter: blur(20px);
+					border-radius: 10px;
+					border: 1px solid rgba(255, 255, 255, 0.18);
+				}
+				form button {
+					width: -webkit-fill-available;
+				}
+				.inputs {
+					display: grid;
+					gap: 1rem;
+					margin: 2rem 0 2.5rem;
+				}
+				.error {
+					color: red;
+					font-weight: bolder;
+				}
+			`}</style>
+		</div>
 	);
 }
 

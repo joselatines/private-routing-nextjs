@@ -1,11 +1,9 @@
 import Link from 'next/link';
-import Button from '../../components/button/styles';
-import { Container } from './styles';
 import users from '../../users.json';
 
 export default function Users({ usersArray }) {
 	return (
-		<Container>
+		<div className='container'>
 			<h1>Users</h1>
 			<table>
 				<thead>
@@ -25,9 +23,29 @@ export default function Users({ usersArray }) {
 			</table>
 
 			<Link href='/'>
-				<Button>Go Home</Button>
+				<button>Go Home</button>
 			</Link>
-		</Container>
+
+			<style jsx>{`
+				table {
+					border: 1px solid red;
+					border-collapse: collapse;
+					padding: 5px;
+					min-width: 100%;
+					margin: 2rem 0;
+				}
+
+				th {
+					border: 1px solid #c0c0c0;
+					padding: 5px;
+					background: #2e2d36;
+				}
+				td {
+					border: 1px solid #c0c0c0;
+					padding: 5px;
+				}
+			`}</style>
+		</div>
 	);
 }
 

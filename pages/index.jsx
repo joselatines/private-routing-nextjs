@@ -1,19 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Ball } from '../components/ball/styles';
-import Button from '../components/button/styles';
-import { Buttons, Container, InnerContainer } from './styles';
 
 import nextImg from '../public/next.webp';
 
 export default function Home() {
 	return (
-		<Container>
-			<Ball b2={true} style={{ right: 50, top: 20 }}></Ball>
-
-			<Ball b3={true} size='7rem' style={{ left: 50, bottom: 60 }}></Ball>
-
-			<InnerContainer>
+		<section className='container'>
+			<div className='innerCOntainer'>
 				<h2>Home Page</h2>
 				<i>Private routing</i>
 				<Image
@@ -23,15 +16,38 @@ export default function Home() {
 					height={100}
 					priority
 				/>
-				<Buttons>
+				<div className='buttons'>
 					<Link href='/login'>
-						<Button>Log In</Button>
+						<button>Log In</button>
 					</Link>
 					<Link href='/users'>
-						<Button outline={true}>Users</Button>
+						<button>Users</button>
 					</Link>
-				</Buttons>
-			</InnerContainer>
-		</Container>
+				</div>
+			</div>
+
+			<style jsx>{`
+				.container {
+					min-height: 100vh;
+					display: grid;
+					place-items: center;
+				}
+				.innerContainer {
+					display: grid;
+					place-items: center;
+				}
+				img {
+					min-width: 4vw;
+					max-width: 10vw;
+				}
+
+				.buttons {
+					margin-top: 1rem;
+					display: flex;
+					justify-content: center;
+					gap: 1rem;
+				}
+			`}</style>
+		</section>
 	);
 }
