@@ -1,12 +1,10 @@
 import { Watermark } from '../components/watermark';
-import { GlobalStyles } from '../styles/globalStyles';
-
+import '../styles/globals.css';
 function MyApp({ Component, pageProps }) {
 	return (
 		<>
 			<Component {...pageProps} />
 			<Watermark />
-			<GlobalStyles />
 		</>
 	);
 }

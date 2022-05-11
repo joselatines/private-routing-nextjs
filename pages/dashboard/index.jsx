@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Button from '../../components/button/styles';
 import withPrivateRoute from '../../components/withPrivateRoute';
 
 const Dashboard = ({ username }) => {
@@ -9,8 +8,10 @@ const Dashboard = ({ username }) => {
 
 			<i>Dashboard cof cof</i>
 			<Link href='/'>
-				<Button style={{ marginTop: '1rem' }}>Log out</Button>
+				<button style={{ marginTop: '1rem' }}>Log out</button>
 			</Link>
+
+			
 		</div>
 	);
 };
@@ -21,6 +22,4 @@ Dashboard.getInitialProps = async context => {
 	return user;
 };
 
-export default Dashboard;
-
-/* export default withPrivateRoute(Dashboard); */
+export default withPrivateRoute(Dashboard);
