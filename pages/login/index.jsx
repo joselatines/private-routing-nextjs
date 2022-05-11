@@ -60,7 +60,6 @@ export default function Login({ error }) {
 
 					border-radius: 5px;
 					padding: 1rem;
-					opacity: 0.5;
 				}
 				form {
 					padding: 3rem;

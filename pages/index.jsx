@@ -6,7 +6,7 @@ import nextImg from '../public/next.webp';
 export default function Home() {
 	return (
 		<section className='container'>
-			<div className='innerCOntainer'>
+			<div className='innerContainer'>
 				<h2>Home Page</h2>
 				<i>Private routing</i>
 				<Image
@@ -21,7 +21,7 @@ export default function Home() {
 						<button>Log In</button>
 					</Link>
 					<Link href='/users'>
-						<button>Users</button>
+						<button className='outline'>Users</button>
 					</Link>
 				</div>
 			</div>
