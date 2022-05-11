@@ -20,4 +20,4 @@ Dashboard.getInitialProps = async context => {
 	return user;
 };
 
-/* export default withPrivateRoute(Dashboard); */
+
