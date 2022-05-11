@@ -22,7 +22,7 @@ const checkUserAuthentication = async user => {
 
 	return { auth: false }; // change null to { isAdmin: true } for test it.
 };
-
+/* 
 export default WrappedComponent => {
 	const hocComponent = ({ ...props }) => <WrappedComponent {...props} />;
 
@@ -54,3 +54,4 @@ export default WrappedComponent => {
 
 	return hocComponent;
 };
+ */
