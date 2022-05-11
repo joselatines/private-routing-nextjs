@@ -38,7 +38,7 @@ export default function Users({ usersArray }) {
 				th {
 					border: 1px solid #c0c0c0;
 					padding: 5px;
-					background: ${VAR.colors.primary};
+					background: #2e2d36;
 				}
 				td {
 					border: 1px solid #c0c0c0;
