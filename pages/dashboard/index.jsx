@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Button from '../../components/button/styles';
-import withPrivateRoute from '../../components/withPrivateRoute';
 
 export default function Dashboard({ username }) {
 	return (
